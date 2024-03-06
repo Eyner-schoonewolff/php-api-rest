@@ -2,7 +2,7 @@
 
 header('Content-Type: application/json');
 
-require_once "./controlador/noticiasControlador.php";
+require_once  $_SERVER["DOCUMENT_ROOT"] . "/controlador/noticiasControlador.php";
 require_once $_SERVER["DOCUMENT_ROOT"] . "/autenticacion/token_seguridad.php";
 
 // Obtener el método de la solicitud HTTP

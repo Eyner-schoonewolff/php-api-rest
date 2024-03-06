@@ -2,7 +2,7 @@
 
 header('Content-Type: application/json');
 
-require_once "./controlador/usuarioControlador.php";
+require_once  $_SERVER["DOCUMENT_ROOT"] . "/controlador/usuarioControlador.php";
 
 $metodo = $_SERVER['REQUEST_METHOD'];
 

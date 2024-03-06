@@ -2,7 +2,7 @@
 
 header('Content-Type: application/json');
 
-require_once "./controlador/comentariosControlador.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/controlador/comentariosControlador.php";
 require_once $_SERVER["DOCUMENT_ROOT"] . "/autenticacion/token_seguridad.php";
 
 $metodo = $_SERVER['REQUEST_METHOD'];
@@ -34,9 +34,9 @@ switch ($metodo) {
                     $cuerpo_comentario = file_get_contents('php://input');
                     $comentario = json_decode($cuerpo_comentario, true);
 
-                    error_log(json_encode("router".$autenticacion->usuario_id));
+                    error_log(json_encode("router" . $autenticacion->usuario_id));
 
-                    echo $comentariosControlador->registrarComentario($autenticacion->usuario_id,$comentario);
+                    echo $comentariosControlador->registrarComentario($autenticacion->usuario_id, $comentario);
                 }
 
                 break;
